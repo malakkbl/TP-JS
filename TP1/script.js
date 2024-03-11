@@ -2,9 +2,7 @@ function runExercise1() {
   const my_input1 = prompt("Entrez une chaîne de caractères :");
   const my_div1 = document.getElementById("ex1");
   const my_paragraph1 = document.createElement("p");
-  const my_text1 = document.createTextNode(
-    "Vous avez entré : " + my_input1
-  );
+  const my_text1 = document.createTextNode("Vous avez entré : " + my_input1);
   my_paragraph1.appendChild(my_text1);
   my_div1.appendChild(my_paragraph1);
 }
@@ -82,13 +80,72 @@ function runExercise7() {
   cocktailElement.innerText = "Long Island Iced Tea";
 }
 
-function runExercise8() {}
+function runExercise8() {
+  var X = 5;
+  var Y = 3;
+  var tableHTML = "<table>";
 
-function runExercise9() {}
+  for (var i = 0; i < X; i++) {
+    tableHTML += "<tr>";
 
-function runExercise10() {}
+    for (var j = 0; j < Y; j++) {
+      var randomContent = Math.floor(Math.random() * 100);
 
-function runExercise11() {}
+      tableHTML += "<td>" + randomContent + "</td>";
+    }
 
-function runExercise12() {}
+    tableHTML += "</tr>";
+  }
 
+  tableHTML += "</table>";
+  document.body.innerHTML = tableHTML;
+}
+
+function runExercise9() {
+  var X = prompt("Entrez le nombre de lignes :");
+  var Y = prompt("Entrez le nombre de colonnes :");
+  var tableHTML = "<table>";
+
+  for (var i = 0; i < X; i++) {
+    tableHTML += "<tr>";
+
+    for (var j = 0; j < Y; j++) {
+      var randomContent = Math.floor(Math.random() * 100);
+
+      tableHTML += "<td>" + randomContent + "</td>";
+    }
+
+    tableHTML += "</tr>";
+  }
+
+  tableHTML += "</table>";
+  document.body.innerHTML = tableHTML;
+}
+
+function runExercise10() {
+  var tableHTML = "<ul>";
+
+  for (var i = 0; i < 10; i++) {
+    var randomContent = Math.floor(Math.random() * 100);
+    tableHTML += "<li>" + randomContent + "</li>";
+  }
+
+  tableHTML += "</ul>";
+  document.body.innerHTML = tableHTML;
+}
+
+function runExercise11() {
+  var R = Math.floor(Math.random() * 100);
+  var G = Math.floor(Math.random() * 100);
+  var B = Math.floor(Math.random() * 100);
+  document.body.style.background = `rgb(${R}, ${G}, ${B})`;}
+
+function runExercise12() {
+  for (var i = 0; i < 12; i++) {
+    var randomId = Math.floor(Math.random() * 100); 
+    var imgSrc = `https://picsum.photos/id/${randomId}/350/350`; 
+    var imgElement = document.createElement("img"); 
+    imgElement.src = imgSrc; 
+    document.body.appendChild(imgElement); 
+  }
+}

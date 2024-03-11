@@ -2,7 +2,7 @@
 const my_input1 = prompt("EXERCICE 01 : Entrez une chaîne de caractères :");
 const my_div1 = document.getElementById("ex1");
 const my_paragraph1 = document.createElement("p");
-const my_text1 = document.createTextNode("Vous avez entré : " + my_input1);
+const my_text1 = document.createTextNode("EXERCICE 01 : Vous avez entré : " + my_input1);
 my_paragraph1.appendChild(my_text1);
 my_div1.appendChild(my_paragraph1);
 
@@ -27,7 +27,7 @@ if (budget >= achats) {
 var prixHT = prompt(" EXERCICE 04 : Entrez le prix hors taxes :");
 var prixTTC = parseFloat(prixHT) * 1.2;
 
-document.body.innerText = "EXERCICE 04 :  Le prix TTC : " + prixTTC + " DHS";
+document.body.innerText += "EXERCICE 04 :  Le prix TTC : " + prixTTC + " DHS";
 
 // Exercice 05 :
 var prixHT = prompt("Entrez le prix hors taxes en DHS :");
@@ -40,7 +40,7 @@ if (isNaN(parseFloat(prixHT))) {
     alert("Le taux de TVA doit être un nombre valide.");
   } else {
     var prixTTC = parseFloat(prixHT) * (1 + parseFloat(tva) / 100);
-    document.body.innerText =
-      "EXERCICE 04 : Le prix TTC est de " + prixTTC + " DHS";
+    document.body.innerText +=
+      " EXERCICE 05 : Le prix TTC est de " + prixTTC + " DHS";
   }
 }

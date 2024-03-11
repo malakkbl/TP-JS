@@ -140,12 +140,17 @@ function runExercise11() {
   var B = Math.floor(Math.random() * 100);
   document.body.style.background = `rgb(${R}, ${G}, ${B})`;}
 
-function runExercise12() {
-  for (var i = 0; i < 12; i++) {
-    var randomId = Math.floor(Math.random() * 100); 
-    var imgSrc = `https://picsum.photos/id/${randomId}/350/350`; 
-    var imgElement = document.createElement("img"); 
-    imgElement.src = imgSrc; 
-    document.body.appendChild(imgElement); 
+  function runExercise12() {
+    var imagesContainer = document.createElement("div"); // Create a container for the images
+    document.body.appendChild(imagesContainer); // Add the container to the body
+  
+    for (var i = 0; i < 12; i++) {
+      var randomId = Math.floor(Math.random() * 100); 
+      var imgSrc = `https://picsum.photos/id/${randomId}/350/350`; 
+      var imgElement = document.createElement("img"); 
+      imgElement.src = imgSrc; 
+      imagesContainer.appendChild(imgElement); // Add the image to the container
+    }
   }
-}
+  
+

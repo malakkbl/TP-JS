@@ -1,3 +1,4 @@
+// Exercice 01 :
 function calculer() {
   var num1 = parseInt(document.getElementById("number1_1").value);
   var num2 = parseInt(document.getElementById("number1_2").value);
@@ -5,6 +6,7 @@ function calculer() {
   document.getElementById("result1").textContent = result;
 }
 
+// Exercice 02 :
 function permuter() {
   var valeur1 = document.getElementById("valeur2_1").value;
   var valeur2 = document.getElementById("valeur2_2").value;
@@ -12,6 +14,7 @@ function permuter() {
   document.getElementById("valeur2_2").value = valeur1;
 }
 
+// Exercice 03 :
 function operation() {
   var mon_operation = document.getElementById("operation3").value;
 
@@ -26,6 +29,7 @@ function operation() {
   }
 }
 
+// Exercice 04 :
 function faireExo4() {
   var saisie = prompt("Entrez trois nombres séparés par un espace:");
   var nombres = saisie.split(" ");
@@ -61,6 +65,7 @@ function faireExo4() {
   }
 }
 
+// Exercice 05 :
 function faireExo5() {
   var prixHT = prompt("Entrez le prix HT :");
 
@@ -93,6 +98,7 @@ function faireExo5() {
   document.body.innerText = "Le prix TTC est : " + prixTTC + " DHS";
 }
 
+// Exercice 06 :
 function afficherEmail(event) {
   event.preventDefault();
 

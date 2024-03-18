@@ -1,3 +1,4 @@
+/* Style general : */
 h1 {
   text-decoration: underline;
   text-align: center;
@@ -13,11 +14,12 @@ h2 {
     margin-bottom: 20px; 
 }
 
-
+/* Exercice 6:*/
 #result6 {
   margin-top: 10px;
 }
 
+/* Exercice 7:*/
 #menu {
   display: none;
   position: absolute;

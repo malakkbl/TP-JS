@@ -1,7 +1,22 @@
+h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+h2 {
+  color: rgb(6, 67, 6);
+}
+
+#result6 {
+  margin-top: 10px;
+}
+
 #menu {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  background-color: #9de2aa;
+  border: 2px solid #0f0d0d;
+  border-radius: 10px;
 }

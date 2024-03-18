@@ -9,7 +9,7 @@
   <body>
     <h1>TP2 en JS - Kably malak</h1>
     <div id="exo1">
-      <h4>EXERCICE 01:</h4>
+      <h2>EXERCICE 01:</h2>
       <input type="number" id="number1_1" />
       <span> + </span>
       <input type="number" id="number1_2" />
@@ -18,13 +18,13 @@
       <button onclick="calculer()">Calculer</button>
     </div>
     <div id="exo2">
-      <h4>EXERCICE 02:</h4>
+      <h2>EXERCICE 02:</h2>
       <input type="text" id="valeur2_1" />
       <input type="text" id="valeur2_2" />
       <button onclick="permuter()">Permuter</button>
     </div>
     <div id="exo3">
-      <h4>EXERCICE 03:</h4>
+      <h2>EXERCICE 03:</h2>
       <input type="number" id="number3_1" />
       <input type="number" id="number3_2" />
 
@@ -39,19 +39,54 @@
       <button onclick="operation()">Calculer</button>
     </div>
     <div id="exo4">
-      <h4>EXERCICE 04:</h4>
+      <h2>EXERCICE 04:</h2>
       <button onclick="faireExo4()">Faire Exercice 4</button>
       <p id="result4"></p>
     </div>
     <div id="exo5">
-      <h4>EXERCICE 05:</h4>
+      <h2>EXERCICE 05:</h2>
       <button onclick="faireExo5()">Faire Exercice 5</button>
     </div>
     <div id="exo6">
-      <h4>EXERCICE 06:</h4>
+      <h2>EXERCICE 06:</h2>
+      <h4>Formulaire de contact</h4>
+      <form id="form6">
+        <ul>
+          <li>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required />
+          </li>
+          <li>
+            <label for="object">Objet :</label>
+            <input type="text" id="object" name="object" required />
+          </li>
+          <li>
+            <label for="corps">Corps :</label>
+            <textarea id="corps" name="corps" rows="4" required></textarea>
+          </li>
+        </ul>
+        <button type="submit" onclick="afficherEmail(event)">
+          Envoyer email
+        </button>
+      </form>
+      <div id="result6"></div>
     </div>
     <div id="exo7">
-      <h4>EXERCICE 07:</h4>
+      <h2>EXERCICE 07:</h2>
+      <h4>Partie 1:</h4>
+      <a href="https://www.w3schools.com/js/js_htmldom_methods.asp" id="lien"
+        >Redirection</a
+      >
+      <h4>Partie 2 :</h4>
+      <div id="divMenu">Cliquez pour afficher le menu</div>
+
+      <div id="menu">
+        <ul> 
+          <li>Pizza Margherita</li>
+          <li>Sushi California Rolls</li>
+          <li>Salade César</li>
+        </ul>
+      </div>
     </div>
     <script src="script2.js"></script>
   </body>

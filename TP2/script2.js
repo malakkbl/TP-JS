@@ -92,3 +92,43 @@ function faireExo5() {
 
   document.body.innerText = "Le prix TTC est : " + prixTTC + " DHS";
 }
+
+function afficherEmail(event) {
+  event.preventDefault();
+
+  var email = document.getElementById("email").value;
+  var objet = document.getElementById("object").value;
+  var corps = document.getElementById("corps").value;
+
+  var message =
+    "Sender: " +
+    email +
+    "<br>" +
+    "Objet: " +
+    objet +
+    "<br>" +
+    "Corps de l'email: " +
+    corps;
+
+  document.getElementById("result6").innerHTML = message;
+}
+
+// Exercice 7 :
+
+// Partie 1:
+document.getElementById("lien").addEventListener("click", function (event) {
+  event.preventDefault();
+  alert("Redirection interdite");
+});
+
+// Partie 2:
+document.getElementById("divMenu").addEventListener("click", function () {
+  var menu = document.getElementById("menu");
+    menu.style.display = "block";
+
+});
+
+
+document.getElementById("menu").addEventListener("mouseleave", function () {
+  this.style.display = "none";
+});

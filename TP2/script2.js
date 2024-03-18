@@ -68,7 +68,7 @@ function faireExo5() {
     prixHT === null ||
     prixHT === "" ||
     isNaN(prixHT) ||
-    parseFloat(prixHT) <= 0
+    parseFloat(prixHT) < 0
   ) {
     document.body.innerText = "Prix HT invalide.";
     return;
@@ -82,7 +82,7 @@ function faireExo5() {
     tauxTVA === null ||
     tauxTVA === "" ||
     isNaN(tauxTVA) ||
-    parseFloat(tauxTVA) <= 0
+    parseFloat(tauxTVA) < 0
   ) {
     document.body.innerText = "Taux de TVA invalide.";
     return;

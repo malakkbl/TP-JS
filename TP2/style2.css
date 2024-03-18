@@ -22,11 +22,11 @@ h2 {
 /* Exercice 7:*/
 #menu {
   display: none;
-  position: absolute;
   padding: 5px;
   padding-right: 5px;
   margin-top: 5px;
   background-color: #9de2aa;
   border: 2px solid #0f0d0d;
   border-radius: 10px;
+  width: 20%;
 }

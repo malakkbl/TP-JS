@@ -51,9 +51,6 @@ function generer_tab(event) {
   var min = parseInt(document.getElementById("min").value);
   var max = parseInt(document.getElementById("max").value);
 
-  var errorDiv = document.getElementById("error");
-  errorDiv.innerHTML = "";
-
   if (
     isNaN(dimension) ||
     isNaN(min) ||
@@ -92,4 +89,108 @@ function generer_tab(event) {
 
   table.appendChild(tbody);
   tableContainer.appendChild(table);
+}
+
+// Exercice 3 :
+
+function add_tab(event) {
+  event.preventDefault();
+
+  var code = document.getElementById("code").value;
+  var nom = document.getElementById("nom").value;
+  var prenom = document.getElementById("prenom").value;
+  var semestre = document.getElementById("semestre").value;
+  var module1 = parseInt(document.getElementById("module1").value);
+  var module2 = parseInt(document.getElementById("module2").value);
+  var module3 = parseInt(document.getElementById("module3").value);
+  var module4 = parseInt(document.getElementById("module4").value);
+  var module5 = parseInt(document.getElementById("module5").value);
+  var module6 = parseInt(document.getElementById("module6").value);
+
+  if (
+    !code ||
+    !nom ||
+    !prenom ||
+    !semestre ||
+    isNaN(module1) ||
+    isNaN(module2) ||
+    isNaN(module3) ||
+    isNaN(module4) ||
+    isNaN(module5) ||
+    isNaN(module6)
+  ) {
+    alert("Veuillez remplir tous les champs avec des valeurs appropriées.");
+    return;
+  }
+
+  var moyenne = (module1 + module2 + module3 + module4 + module5 + module6) / 6;
+
+  var decision = "";
+  var modulesNonValides = 0;
+  if (module1 < 12) modulesNonValides++;
+  if (module2 < 12) modulesNonValides++;
+  if (module3 < 12) modulesNonValides++;
+  if (module4 < 12) modulesNonValides++;
+  if (module5 < 12) modulesNonValides++;
+  if (module6 < 12) modulesNonValides++;
+
+  if (moyenne >= 12 && modulesNonValides < 3) {
+    decision = "Validé";
+  } else {
+    decision = "Échoué";
+  }
+
+  // Création de la ligne pour le tableau
+  var tableRow = document.createElement("tr");
+  var tableData = document.createElement("td");
+  tableData.textContent = code;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = nom;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = prenom;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = semestre;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module1;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module2;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module3;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module4;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module5;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = module6;
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = moyenne.toFixed(2);
+  tableRow.appendChild(tableData);
+
+  tableData = document.createElement("td");
+  tableData.textContent = decision;
+  tableRow.appendChild(tableData);
+
+  // Ajout de la ligne au tableau
+  var tableBody = document.getElementById("studentTableBody");
+  tableBody.appendChild(tableRow);
 }

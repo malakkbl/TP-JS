@@ -58,14 +58,82 @@
         <input type="number" id="min" name="min" required /><br />
         <label for="max">La valeur maximale </label><br />
         <input type="number" id="max" name="max" required /><br />
-        <button type="submit" class="this" onclick="generer_tab(event)">Générer un tableau</button>
+        <button type="submit" class="this" onclick="generer_tab(event)">
+          Générer un tableau
+        </button>
       </form>
 
-      <div id="error"></div>
       <div id="tableContainer"></div>
     </div>
     <div>
+      <!--Exercice 3-->
       <h1>Exercice 3 :</h1>
+      <form id="form3">
+        <div>
+          <label for="code">Code étudiant :</label>
+          <input type="text" id="code" name="code" required />
+        </div>
+        <div>
+          <label for="nom">Nom étudiant :</label>
+          <input type="text" id="nom" name="nom" required />
+        </div>
+        <div>
+          <label for="prenom">Prénom étudiant :</label>
+          <input type="text" id="prenom" name="prenom" required />
+        </div>
+        <div>
+          <label for="semestre">Semestre :</label>
+          <select id="semestre" name="semestre" required>
+            <option value="">Sélectionnez le semestre</option>
+            <option value="Semestre 1">Semestre 1</option>
+            <option value="Semestre 2">Semestre 2</option>
+          </select>
+        </div>
+        <div>
+          <label for="module1">Note module 1 :</label>
+          <input type="number" id="module1" name="module1" required />
+        </div>
+        <div>
+          <label for="module2">Note module 2 :</label>
+          <input type="number" id="module2" name="module2" required />
+        </div>
+        <div>
+          <label for="module3">Note module 3 :</label>
+          <input type="number" id="module3" name="module3" required />
+        </div>
+        <div>
+          <label for="module4">Note module 4 :</label>
+          <input type="number" id="module4" name="module4" required />
+        </div>
+        <div>
+          <label for="module5">Note module 5 :</label>
+          <input type="number" id="module5" name="module5" required />
+        </div>
+        <div>
+          <label for="module6">Note module 6 :</label>
+          <input type="number" id="module6" name="module6" required />
+        </div>
+        <button type="submit" onclick="add_tab(event)">Valider</button>
+      </form>
+      <table id="studentTable">
+        <thead id="studentTableHead">
+            <tr>
+                <th>Code étudiant</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Semestre</th>
+                <th>Module 1</th>
+                <th>Module 2</th>
+                <th>Module 3</th>
+                <th>Module 4</th>
+                <th>Module 5</th>
+                <th>Module 6</th>
+                <th>Moyenne</th>
+                <th>Décision</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+    </table>
     </div>
     <script src="script3.js"></script>
   </body>

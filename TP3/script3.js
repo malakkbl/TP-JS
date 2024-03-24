@@ -96,9 +96,9 @@ function generer_tab(event) {
 function add_tab(event) {
   event.preventDefault();
 
-  var code = document.getElementById("code").value;
-  var nom = document.getElementById("nom").value;
-  var prenom = document.getElementById("prenom").value;
+  var code = document.getElementById("code3").value;
+  var nom = document.getElementById("nom3").value;
+  var prenom = document.getElementById("prenom3").value;
   var semestre = document.getElementById("semestre").value;
   var module1 = parseInt(document.getElementById("module1").value);
   var module2 = parseInt(document.getElementById("module2").value);
@@ -112,13 +112,13 @@ function add_tab(event) {
     !nom ||
     !prenom ||
     !semestre ||
-    isNaN(module1) ||
-    isNaN(module2) ||
-    isNaN(module3) ||
-    isNaN(module4) ||
-    isNaN(module5) ||
-    isNaN(module6)
-  ) {
+    isNaN(module1) || module1 < 0 || module1 > 20 ||
+    isNaN(module2) || module2 < 0 || module2 > 20 ||
+    isNaN(module3) || module3 < 0 || module3 > 20 ||
+    isNaN(module4) || module4 < 0 || module4 > 20 ||
+    isNaN(module5) || module5 < 0 || module5 > 20 ||
+    isNaN(module6) || module6 < 0 || module6 > 20
+) {
     alert("Veuillez remplir tous les champs avec des valeurs appropriées.");
     return;
   }
@@ -127,20 +127,26 @@ function add_tab(event) {
 
   var decision = "";
   var modulesNonValides = 0;
+  var elimine =0;
   if (module1 < 12) modulesNonValides++;
   if (module2 < 12) modulesNonValides++;
   if (module3 < 12) modulesNonValides++;
   if (module4 < 12) modulesNonValides++;
   if (module5 < 12) modulesNonValides++;
   if (module6 < 12) modulesNonValides++;
+  if (module1 < 8) elimine++;
+  if (module2 < 8) elimine++;
+  if (module3 < 8) elimine++;
+  if (module4 < 8) elimine++;
+  if (module5 < 8) elimine++;
+  if (module6 < 8) elimine++;
 
-  if (moyenne >= 12 && modulesNonValides < 3) {
+  if (moyenne >= 12 && modulesNonValides < 3 && elimine == 0) {
     decision = "Validé";
   } else {
     decision = "Échoué";
   }
 
-  // Création de la ligne pour le tableau
   var tableRow = document.createElement("tr");
   var tableData = document.createElement("td");
   tableData.textContent = code;
@@ -190,7 +196,9 @@ function add_tab(event) {
   tableData.textContent = decision;
   tableRow.appendChild(tableData);
 
-  // Ajout de la ligne au tableau
   var tableBody = document.getElementById("studentTableBody");
   tableBody.appendChild(tableRow);
+
+  var form = document.getElementById("form3");
+  form.reset();
 }

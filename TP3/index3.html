@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="style3.css" />
   </head>
   <body>
+    <!--Exercice 1 :-->
+    <div id="exo1">
+      <h1>Exercice 1 :</h1>
+      <form id="form1">
+        <label>Nom :</label>
+        <input type="text" id="nom" name="nom" required /><br>
+        <label>Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required /><br>
+        <label>E-mail :</label>
+        <input type="email" id="email" name="email" required /><br>
+        <label>Mot de passe :</label>
+        <input type="password" id="motdepasse1" name="motdepasse1" required /><br>
+        <label>Resaisir le mot de passe :</label>
+        <input type="password" id="motdepasse2" name="motdepasse2" required /><br>       
+        <label>Telephone :</label>
+        <input type="number" id="tel" name="telephone" required /><br>       
+        <label for="langue">Langue :</label>
+        <select name="langue" id="langue" >
+          <option value="anglais">Anglais</option>
+          <option value="francais">Français</option>
+          <option value="arabe">Arabe</option>
+          <option value="espagnole">Espagnole</option>
+        </select><br>   
+        <label for="comment">Commentaire :</label>
+        <textarea id="comment" name="comment" rows="2" required></textarea><br>   
+        <button onclick="validerForm(event)">Valider</button>
+        <button onclick="annulerForm()">Annuler</button>
+      </form>
+      <div id="result1"></div>
+    </div>
+    <!--Exercice 2 :-->
+    <div>
+      <h1>Exercice 2 :</h1>
+    </div>
+    <div>
+      <h1>Exercice 3 :</h1>
+    </div>
     <script src="script3.js"></script>
   </body>
 </html>

@@ -1,0 +1,23 @@
+/* Exercice 1 */
+
+label {
+  margin-right: 5px;
+}
+
+input,
+select,
+textarea {
+  margin-bottom: 5px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+#result1{
+
+    padding: 20px;
+    margin-bottom: 20px; 
+}
+
+/* Exercice 2 */

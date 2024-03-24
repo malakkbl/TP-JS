@@ -41,41 +41,55 @@ function annulerForm() {
 
 // Exercice 2 :
 function generer_tab(event) {
-    event.preventDefault(); 
-    var dimension = parseInt(document.getElementById("dimension").value);
-    var min = parseInt(document.getElementById("min").value);
-    var max = parseInt(document.getElementById("max").value);
+  event.preventDefault();
 
-    var errorDiv = document.getElementById("error");
-    errorDiv.innerHTML = "";
+  var dimensionInput = document.getElementById("dimension");
+  var minInput = document.getElementById("min");
+  var maxInput = document.getElementById("max");
 
-    if (isNaN(dimension) || isNaN(min) || isNaN(max)) {
-        errorDiv.textContent = "Veuillez saisir des valeurs numériques dans tous les champs.";
-        return;
+  var dimension = parseInt(document.getElementById("dimension").value);
+  var min = parseInt(document.getElementById("min").value);
+  var max = parseInt(document.getElementById("max").value);
+
+  var errorDiv = document.getElementById("error");
+  errorDiv.innerHTML = "";
+
+  if (
+    isNaN(dimension) ||
+    isNaN(min) ||
+    isNaN(max) ||
+    dimension.toString() !== dimensionInput.value ||
+    min.toString() !== minInput.value ||
+    max.toString() !== maxInput.value
+  ) {
+    alert(
+      "Veuillez saisir des valeurs numériques entières dans tous les champs."
+    );
+    return;
+  }
+
+  if (min >= max) {
+    alert("La valeur minimale doit être inférieure à la valeur maximale.");
+    return;
+  }
+
+  var tableContainer = document.getElementById("tableContainer");
+  tableContainer.innerHTML = "";
+
+  var table = document.createElement("table");
+  var tbody = document.createElement("tbody");
+
+  for (var i = 0; i < dimension / 10 + 1; i++) {
+    var tr = document.createElement("tr");
+    for (var j = 0; j < Math.min(10, dimension - i * 10); j++) {
+      var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      var td = document.createElement("td");
+      td.textContent = randomNumber;
+      tr.appendChild(td);
     }
+    tbody.appendChild(tr);
+  }
 
-    if (min >= max) {
-        errorDiv.textContent = "La valeur minimale doit être inférieure à la valeur maximale.";
-        return;
-    }
-
-    var tableContainer = document.getElementById("tableContainer");
-    tableContainer.innerHTML = ""; 
-
-    var table = document.createElement("table");
-    var tbody = document.createElement("tbody");
-
-    for (var i = 0; i < dimension; i++) {
-        var tr = document.createElement("tr");
-        for (var j = 0; j < Math.min(10, dimension - i * 10); j++) { 
-            var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-            var td = document.createElement("td");
-            td.textContent = randomNumber;
-            tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-    }
-
-    table.appendChild(tbody);
-    tableContainer.appendChild(table);
+  table.appendChild(tbody);
+  tableContainer.appendChild(table);
 }

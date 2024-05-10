@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://unpkg.com/vue@3.0.0"></script>
+    <style>
+        body{
+            font-weight: bold;
+            font-size: larger;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="monapp">
+      <ul>
+        <li>
+          Couleur de la police :<br />
+          Rouge <input type="radio" name="color" @click="colorred" /><br />
+          Bleu <input type="radio" name="color" @click="colorblue" />
+        </li>
+        <li>
+          Afficher le paragraphe ? <input type="checkbox" @click="affichage" />
+        </li>
+      </ul>
+      <p v-if="visible" id="par">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
+        lacus sem. Phasellus malesuada quam sit amet justo pulvinar, at placerat
+        nunc luctus. Sed sollicitudin mattis est, et commodo sapien consectetur
+        vitae.
+      </p>
+    </div>
+
+    <script>
+      const appli = {
+        data() {
+          return {
+            visible: false,
+          };
+        },
+        methods: {
+          affichage() {
+            this.visible = !this.visible;
+          },
+          colorred() {
+            const paragraph = document.getElementById("par");
+            
+              paragraph.style.color = "red";
+            
+          },
+          colorblue() {
+            const paragraph = document.getElementById("par");
+            
+              paragraph.style.color = "blue";
+            
+          },
+        },
+      };
+
+      Vue.createApp(appli).mount("#monapp");
+    </script>
+  </body>
+</html>

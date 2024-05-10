@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://unpkg.com/vue@3.0.0"></script>
+    <style>
+      #exo1 {
+        background-color: #e9bbbb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        border-radius: 100px;
+      }
+
+      #button1 {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        background-color: #d03050;
+        color: white;
+        font-size: 16px;
+        margin: 50px;
+      }
+
+      #exo2,
+      #exo3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+      }
+
+      #exo2 button {
+        margin: 10px;
+        font-size: larger;
+      }
+
+      input {
+        width: 400px;
+        padding: 10px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="monapp">
+      <div id="exo1">
+        <h3>Exercice 1 :</h3>
+        <button id="button1" @click="change_button">{{titre}}</button>
+      </div>
+      <div id="exo2">
+        <h3>Exercice 2 :</h3>
+        <button id="button2" @click="increment">++</button>
+        <p>{{count}}</p>
+        <button id="button3" @click="decrement">--</button>
+      </div>
+      <div id="exo3">
+        <h3>Exercice 3 :</h3>
+        <input
+          type="text"
+          placeholder="Entrez une chaîne de caractères sans espace:"
+          @keyup.space="message"
+        />
+        <div v-if="visible">La chaîne ne doit pas contenir d'espace.</div>
+      </div>
+    </div>
+
+    <script>
+      const appli = {
+        data() {
+          return {
+            titre: "Cliquez moi!",
+            count: 0,
+            visible: false,
+          };
+        },
+        methods: {
+          change_button() {
+            this.titre = "Cliqué!";
+          },
+          increment() {
+            this.count++;
+          },
+          decrement() {
+            this.count--;
+          },
+          message() {
+            this.visible = true;
+          },
+        },
+      };
+
+      Vue.createApp(appli).mount("#monapp");
+    </script>
+  </body>
+</html>
